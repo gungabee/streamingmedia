@@ -5,13 +5,55 @@ html {
     margin: 0 auto;
     width: 375px;
     background-color: #FFFFFF;
-  }
-  header {
-    background-color: #020659;
+    font-family: 'Raleway';
     color: #FFFFFF;
   }
+  header {
+    padding-top: 50px; 
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-image: linear-gradient(to right, #2104D9, #020659)
+  }
+  h1 {
+    font-size: 22px;
+    line-height: 2em;
+  }
+   h1, h2, h3 {
+     font-weight: bold;
+     text-transform: uppercase;
+    }
+  h2, h3 {
+    font-size: 20px;
+    color: #590242;
+    line-height: 2em;
+  }
+  nav li:first-child {
+    font-variant: small-caps;
+  }
+  nav {
+    width: 375px;
+     height: 67px;
+     background-color: #030A8C;
+     position: absolute;
+     top: 0;
+     z-index: 1;
+     text-transform: uppercase;
+  }
+  nav a{
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  nav h2 {
+    visibility: hidden;
+  }
   
   
+  ul {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+  }
   .scroll {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -34,6 +76,8 @@ html {
     display: flex;
   }
   dt {
+    size: 16pt;
+    color: #590242;
     padding-right: 5px;
   }
   audio {
@@ -106,39 +150,6 @@ html {
   }
   
   
-  h1 {
-    font-size: 22px;
-    line-height: 2em;
-  }
-   h1, h2, h3 {
-     font-weight: bold;
-     text-transform: uppercase;
-    }
-  h2, h3 {
-    font-size: 20px;
-    color: #590242;
-    line-height: 2em;
-  }
-  nav {
-    
-  }
-  nav a{
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-  nav h2 {
-    visibility: hidden;
-  }
-  nav li:first-child {
-    font-variant: small-caps;
-  }
-  
-  
-  ul {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height .2s ease-out;
-  }
   label {
       cursor: pointer;
       display: inline-block;
