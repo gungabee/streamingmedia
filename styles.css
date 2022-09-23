@@ -9,50 +9,82 @@ html {
     color: #FFFFFF;
   }
   header {
-    padding-top: 50px; 
+    padding-top: 55px; 
     padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-image: linear-gradient(to right, #2104D9, #020659)
   }
+  header p {
+    font-size: 20px;
+  }
   h1 {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 2em;
   }
-   h1, h2, h3 {
+  h1, h2, h3 {
      font-weight: bold;
      text-transform: uppercase;
     }
-  h2, h3 {
+  h2 {
     font-size: 20px;
     color: #590242;
     line-height: 2em;
-  }
-  nav li:first-child {
-    font-variant: small-caps;
+    margin-left: 20px;
   }
   nav {
-    width: 375px;
-     height: 67px;
-     background-color: #030A8C;
-     position: absolute;
-     top: 0;
-     z-index: 1;
-     text-transform: uppercase;
+      width: 375px;
+      height: 67px;
+      background-color: #030A8C;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      text-transform: uppercase;
   }
-  nav a{
-    color: #FFFFFF;
-    text-decoration: none;
+  nav ul {
+      text-align: center;
   }
   nav h2 {
-    visibility: hidden;
+      visibility: hidden;
+      height: 1px;
   }
-  
-  
   ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       overflow: hidden;
+      background-color: #2104D9;
       max-height: 0;
       transition: max-height .2s ease-out;
+  }
+  li a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: #FFFFFF;    
+  }
+  [href="#home"] {
+      text-transform: capitalize;
+      font-variant: small-caps;
+      font-weight: bold;
+      font-size: 30px;
+      position: absolute;
+      top: 0;
+      left: 90px;
+      padding: 16px 16px;
+  }
+  a:hover, input:hover {
+      background-color: #590242;
+  }
+  #playlists h3, #curated h3 {
+    font-size: 16px;
+  }
+  #playlists p, #curated p {
+    font-size: 14px;
+  }
+  #trending h3 {
+    font-size: 16px;
+    color: #590242;
   }
   .scroll {
     display: grid;
@@ -74,11 +106,24 @@ html {
   }
   dl {
     display: flex;
+    margin-top: -20px;
   }
   dt {
-    size: 16pt;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #590242;
+    padding-top: 5px;
+  }
+  dd {
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 16px;
     color: #590242;
     padding-right: 5px;
+    padding-left: 0;
+    padding-top: 5px;
+    margin-left: 10px;
   }
   audio {
     position: absolute;
@@ -87,6 +132,8 @@ html {
   }
   .more {
     text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
     background-color: #590242;
     color: #FFFFFF;
     border-radius: 5px;
@@ -94,7 +141,7 @@ html {
     width: 150px;
     display: block;
     text-align: center;
-    margin: 10px 0 30px 32px;
+    margin: 10px 0 30px 30px;
   }
   .more:hover {
     background-color: #020659;
@@ -136,26 +183,25 @@ html {
   #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
     background: #FFFFFF;
   }
-  #playlists div{
+  #playlists div {
     background-color: #2699FB;
   }
-  #playlists section{
+  #playlists section {
     background-color: #0D8DFB;
   }
-  #curated div{
+  #curated div {
     background-color: #030A8C;
   }
   #curated section {
     background-color: #020873;
   }
-  
-  
   label {
       cursor: pointer;
-      display: inline-block;
+      display: block;
       padding: 28px 20px;
       position: relative;
       user-select: none;
+      margin-top: -25px;
   }
   label span {
       background-color: #ffffff;
@@ -198,19 +244,101 @@ html {
   input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
       top: 0;
   }
-  
+  footer {
+      font-weight: bold;
+      font-size: 10px;
+      text-align: center;
+      padding-bottom: 10px; 
+      color: #590242;
+  }
   @media screen and (min-width:834px) {
-    body {
-      width: 834px;
-    }
-      ul {
-          overflow: visible;
-          position: absolute;
-          top: 0;
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      body {
+          width: 834px;
       }
       label span, input {
           display: none;
       }
-  }
+      nav {
+          width: 834px; 
+      }
+      ul {
+          overflow: visible;
+          position: absolute;
+          top: 0;
+          width: 834px; 
+          display: grid; 
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+          grid-template-rows: 63px; 
+          align-items: center; 
+      }
+      li {
+          padding: 0;
+          margin: 0;
+      }
+      li a, [href="#home"] {
+          box-sizing: border-box; 
+          padding: 12px;
+          height: 100%; 
+      }
+      [href="#home"] {
+          position: static; 
+      }
+      nav a {
+          display: block; 
+      }
+      main {
+          display: grid;
+          grid-template-columns: 417px 417px;
+      }
+      h2 {
+          margin-left: 25px;
+      }
+      #trending {
+          width: 834px;
+      }
+      #playlists {
+          width: 417px;
+          grid-column: 1/2;
+      }
+      #curated {
+          width: 417px;
+          grid-column: 2/2;
+      }
+      #playlists section, #curated section {
+          height: 125px;
+          width: 377px;
+          margin: 15px 15px 15px 13px;
+      }
+      #playlists img, #curated img {
+          float: left;
+          position: absolute;
+          top: 4px;
+          left: 15px;
+          right: 20px;
+      }
+      #playlists section h3, #curated section h3 {
+          position: absolute;
+          text-align: center;
+          top: 4px;
+          left: 200px;
+          padding-right: 30px;
+      }
+      #playlists p, #curated p {
+        position: absolute;
+        top: 36px;
+        left: 200px;
+        padding-right: 30px;
+    }
+      #playlists .scroll, #curated .scroll {
+          overflow-x: hidden;
+          overflow-y: auto;
+          height: 515px;
+          grid-template-rows: repeat(5, 40px);
+          grid-template-columns: 417px;
+          row-gap: 100px;
+      }
+      .more {
+          float: right;
+          margin: 10px 32px 30px 0;
+      }
+    }  
